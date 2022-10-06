@@ -1,0 +1,100 @@
+---
+  title: "Diseño de experimentos - Actividad 2"
+author: "Francisco Marquez"
+date: "2/12/2022"
+output: html_document
+---
+  
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+  
+  ```{r}
+
+### construccion de los datos
+Vara<- c(32,44,31,35,33,33)
+Varb<- c(40,46,33,29,35,32)
+Varc<- c(37,30,28,33,37,39)
+
+head(Vara)
+
+``` 
+
+
+``` {r}
+### Ejercicio 1
+
+### creamos y describimos el conjunto de datos ejer2.data
+ejer2.data<- data.frame(Vara,Varb,Varc)
+str(ejer2.data)
+dim(ejer2.data)
+
+ejer2.factor<- data.frame(Vara,Varb,Varc)
+
+
+
+
+anova <- aov(Vara ~ Varb+Varc, data = ejer2.data)
+summary(anova)
+
+
+
+
+
+
+
+TukeyHSD(anova)
+
+
+```
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+  
+  ```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

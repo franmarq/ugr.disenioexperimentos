@@ -1,0 +1,57 @@
+---
+title: "Ejercicios Tema 3"
+author: "franmarq@gmail.com"
+date: '2022-03-05'
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### En primer lugar hacemos lectura de los datos a analizar que se encuentran en un archivo excel.
+
+```{r libreria}
+library(readxl)
+```
+
+```{r lectura}
+archivo <- c("Personales/Javier/Academicos/UGR - Estadistica Aplicada/Materias/C2 Diseño estadístico experimental y control de calidad. Aplicaciones en Biociencias e Ingeniería/Datos Ejercicio 2.xlsx")
+
+archivo
+
+my_data <- read_excel(archivo)
+```
+
+
+```{r verdata}
+head(my_data)
+```
+```{r grafico}
+plot(y~x,my_data)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
